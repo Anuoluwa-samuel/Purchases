@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'ERPaux.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'my_django_db',       # your DB name
+        'USER': 'root',             # your MySQL username
+        'PASSWORD': 'Ay_mide17.',     # your MySQL password
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
