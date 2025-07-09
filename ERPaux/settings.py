@@ -81,13 +81,14 @@ WSGI_APPLICATION = 'ERPaux.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_django_db',       # your DB name
-        'USER': 'root',             # your MySQL username
-        'PASSWORD': 'Ay_mide17.',     # your MySQL password
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST', default='127.0.0.1'),
+        'PORT': config('DB_PORT', default='3306'),
     }
 }
+
 
 
 
