@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  color: #00bcd4;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.cards button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+input, button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.nav-item.active-nav {
+  background-color: #555;
+  color: #00bcd4;
+  font-weight: bold;
+  padding-left: 10px;
+  border-left: 3px solid #00bcd4;
+}
