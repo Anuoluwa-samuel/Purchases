@@ -1,10 +1,6 @@
-body {
-  min-height: 100vh;
+body, body {
+  min-height: 100%;
   min-height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
 }
 
 main {
@@ -87,3 +83,6 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+.sidebar{
+  height: 100vh;
+}
