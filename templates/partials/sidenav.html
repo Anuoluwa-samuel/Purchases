@@ -1,8 +1,7 @@
 
 
 
- <div class="container">
-    <aside class="sidebar">
+<aside class="sidebar">
       <h2>ERP SYSTEM</h2>
       <nav>
        <ul>
@@ -16,55 +15,3 @@
         </ul>
       </nav>
     </aside>
-
-    <main class="content">
-      <!-- Pages -->
-      <section id="dashboard" class="page active">
-        <h1>Dashboard</h1>
-        <div class="cards">
-          <button onclick="showPage('requisitions')">Purchase Requisitions</button>
-          <button onclick="showPage('orders')">Purchase Orders</button>
-          <button onclick="showPage('receipts')">Goods Receipt Notes</button>
-        </div>
-      </section>
-
-      <section id="requisitions" class="page">
-        <h1>Create Purchase Requisition</h1>
-        <input type="text" placeholder="Description" />
-        <input type="number" placeholder="Quantity" />
-        <button>Create Requisition</button>
-      </section>
-
-      <section id="orders" class="page">
-        <h1>Purchase Orders</h1>
-        <table>
-          <tr><th>Description</th><th>Quantity</th><th>Status</th></tr>
-          <tr><td>Item A</td><td>10</td><td>Pending</td></tr>
-          <tr><td>Item B</td><td>5</td><td>Approved</td></tr>
-          <tr><td>Item C</td><td>2</td><td>Rejected</td></tr>
-        </table>
-      </section>
-
-      <section id="receipts" class="page">
-        <h1>Goods Receipt Notes</h1>
-        <table>
-          <tr><th>GRN Number</th><th>PO Number</th><th>Received Date</th></tr>
-          <tr><td>GRN001</td><td>PO12345</td><td>2024-04-03</td></tr>
-          <tr><td>GRN002</td><td>PO12345</td><td>2024-04-08</td></tr>
-          <tr><td>GRN002</td><td>PO12347</td><td>2024-04-08</td></tr>
-        </table>
-      </section>
-
-      <section id="invoices" class="page">
-        <h1>Invoices</h1>
-        <table>
-          <tr><th>Invoice Number</th><th>Vendor</th><th>Amount</th></tr>
-          <tr><td>INV001</td><td>Vendor X</td><td>$1,000</td></tr>
-          <tr><td>INV002</td><td>Vendor Y</td><td>$1,500</td></tr>
-          <tr><td>INV003</td><td>Vendor Z</td><td>$500</td></tr>
-        </table>
-      </section>
-
-      <!-- Add more pages like Inventory, Vendors etc. -->
-    </main>
-  </div>
