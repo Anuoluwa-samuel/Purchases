@@ -1,4 +1,8 @@
+from django.db import models
+
+
 # Example for Inventory model
+
 class Inventory(models.Model):
     item_name = models.CharField(max_length=100)
     item_description = models.TextField(blank=True)
