@@ -39,17 +39,76 @@
 </head>
 <body>
 
-    <div class="sidebar">
-        <h4 class="text-white text-center">ERP System</h4>
-        <hr class="text-light">
-        <a href="{% url 'dashboard' %}"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-        <a href="{% url 'add-inventory' %}"><i class="bi bi-box-seam me-2"></i>Add Inventory</a>
-        <a href="{% url 'add-request-materials' %}"><i class="bi bi-journal-plus me-2"></i>Request Materials</a>
-        <a href="{% url 'add-request-quotes' %}"><i class="bi bi-file-earmark-text me-2"></i>Request Quotes</a>
-        <a href="{% url 'add-quotation' %}"><i class="bi bi-file-earmark-bar-graph me-2"></i>Add Quotation</a>
-        <a href="{% url 'add-purchase-order' %}"><i class="bi bi-cart-check me-2"></i>Purchase Order</a>
+    <!-- Sidebar Wrapper -->
+<div class="d-flex flex-column p-3 text-white bg-dark" style="width: 250px; height: 100vh;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <span class="fs-4">🧾 ERP Dashboard</span>
+  </a>
+  <hr>
 
+  <div class="accordion accordion-flush" id="sidebarMenu">
+
+    <!-- Dashboard -->
+    <div class="accordion-item bg-dark border-0">
+      <h2 class="accordion-header">
+        <a href="{% url 'dashboard' %}" class="accordion-button bg-dark text-white collapsed p-2 ps-3">
+          <i class="bi bi-speedometer2 me-2"></i> Dashboard
+        </a>
+      </h2>
     </div>
+
+    <!-- Inventory Section -->
+    <div class="accordion-item bg-dark">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInventory">
+          <i class="bi bi-box-seam me-2"></i> Inventory
+        </button>
+      </h2>
+      <div id="collapseInventory" class="accordion-collapse collapse" data-bs-parent="#sidebarMenu">
+        <div class="accordion-body bg-dark ps-4">
+          <a href="{% url 'add-inventory' %}" class="text-white d-block">➕ Add Inventory</a>
+          <a href="{% url 'inventory-list' %}" class="text-white d-block">📄 View Inventory</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Request Section -->
+    <div class="accordion-item bg-dark">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRequests">
+          <i class="bi bi-file-earmark-text me-2"></i> Requests
+        </button>
+      </h2>
+      <div id="collapseRequests" class="accordion-collapse collapse" data-bs-parent="#sidebarMenu">
+        <div class="accordion-body bg-dark ps-4">
+          <a href="{% url 'request-materials' %}" class="text-white d-block">📦 Request Materials</a>
+          <a href="{% url 'request-quotes' %}" class="text-white d-block">📝 Request Quotes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div class="accordion-item bg-dark">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrders">
+          <i class="bi bi-cart-check me-2"></i> Orders
+        </button>
+      </h2>
+      <div id="collapseOrders" class="accordion-collapse collapse" data-bs-parent="#sidebarMenu">
+        <div class="accordion-body bg-dark ps-4">
+          <a href="{% url 'add-quotation' %}" class="text-white d-block">📃 Add Quotation</a>
+          <a href="{% url 'purchase-order' %}" class="text-white d-block">🛒 Purchase Order</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <div class="text-white-50 text-center small">
+    &copy; 2025 Anuoluwa ERP
+  </div>
+</div>
 
     <div class="content">
         {% if messages %}
