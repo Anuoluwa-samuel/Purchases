@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">ERP Dashboard</h2>
+
+<!-- Inventory -->
+<div class="mb-5">
+    <h4>Inventory Items</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Quantity</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+            {% for item in inventory_items %}
+            <tr>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.item_description }}</td>
+                <td>{{ item.quantity_in_stock }}</td>
+                <td>{{ item.unit_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Request for Materials -->
+<div class="mb-5">
+    <h4>Requests for Materials</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Item</th><th>Quantity</th><th>By</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {% for req in materials %}
+            <tr>
+                <td>{{ req.item.item_name }}</td>
+                <td>{{ req.quantity_requested }}</td>
+                <td>{{ req.requested_by }}</td>
+                <td>{{ req.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- RFQs -->
+<div class="mb-5">
+    <h4>Requests for Quotes</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Item</th><th>Vendor</th><th>Quantity</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {% for rfq in rfqs %}
+            <tr>
+                <td>{{ rfq.item.item_name }}</td>
+                <td>{{ rfq.vendor_name }}</td>
+                <td>{{ rfq.quantity }}</td>
+                <td>{{ rfq.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Quotations -->
+<div class="mb-5">
+    <h4>Quotations Received</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>RFQ</th><th>Vendor</th><th>Price</th><th>Selected?</th></tr>
+        </thead>
+        <tbody>
+            {% for q in quotations %}
+            <tr>
+                <td>{{ q.rfq.vendor_name }}</td>
+                <td>{{ q.vendor_name }}</td>
+                <td>{{ q.quoted_price }}</td>
+                <td>{{ q.selected }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Purchase Orders -->
+<div class="mb-5">
+    <h4>Purchasing Orders</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>PO Number</th><th>Vendor</th><th>Total</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {% for po in orders %}
+            <tr>
+                <td>{{ po.po_number }}</td>
+                <td>{{ po.quotation.vendor_name }}</td>
+                <td>{{ po.total_amount }}</td>
+                <td>{{ po.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -13,6 +13,3 @@ urlpatterns = [
     path('add-quotation/', add_quotations_received, name='add-quotation'),
     path('add-purchase-order/', add_purchasing_order, name='add-purchase-order'),
 ]
-urlpatterns += [
-   
-]
