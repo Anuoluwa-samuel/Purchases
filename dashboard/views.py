@@ -22,12 +22,19 @@ def dashboard(request):
     })
 
 
+from django.contrib import messages
+
 def add_inventory(request):
-    form = InventoryForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('add-inventory')
+    if request.method == 'POST':
+        form = InventoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Inventory item added successfully.")
+            return redirect('add-inventory')
+    else:
+        form = InventoryForm()
     return render(request, 'add_inventory.html', {'form': form})
+
 
 def add_request_for_materials(request):
     form = RequestForMaterialsForm(request.POST or None)
