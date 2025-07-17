@@ -3,7 +3,7 @@ from .models import Inventory, RequestForMaterials, RequestForQuotes, Quotations
 
 admin.site.site_header = 'Purchase Management System Dashboard'
 admin.site.register(Inventory)
-class ProductAdmin(admin.ModelAdmin):
+class InventoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'quantity', 'category',)
     list_filter = ['category',]
     
