@@ -4,6 +4,22 @@ from .forms import (
     RequestForQuotesForm, QuotationsReceivedForm,
     PurchasingOrdersForm
 )
+from .models import Inventory, RequestForMaterials, RequestForQuotes, QuotationsReceived, PurchasingOrders
+
+def dashboard(request):
+    inventory_items = Inventory.objects.all()
+    materials = RequestForMaterials.objects.all()
+    rfqs = RequestForQuotes.objects.all()
+    quotations = QuotationsReceived.objects.all()
+    orders = PurchasingOrders.objects.all()
+
+    return render(request, 'dashboard.html', {
+        'inventory_items': inventory_items,
+        'materials': materials,
+        'rfqs': rfqs,
+        'quotations': quotations,
+        'orders': orders
+    })
 
 
 def add_inventory(request):
