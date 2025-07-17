@@ -13,7 +13,7 @@ class Inventory(models.Model):
 
 
 # 2. Request for Materials
-class RequestForMaterial(models.Model):
+class RequestForMaterials(models.Model):
     STATUS_CHOICES = [
         ('Pending', 'Pending'),
         ('Approved', 'Approved'),
@@ -30,7 +30,7 @@ class RequestForMaterial(models.Model):
 
 
 # 3. Request for Quotes
-class RequestForQuote(models.Model):
+class RequestForQuotes(models.Model):
     STATUS_CHOICES = [
         ('Sent', 'Sent'),
         ('Responded', 'Responded'),

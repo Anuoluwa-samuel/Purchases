@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Inventory, RequestForMaterial, RequestForQuotes, QuotationsReceived, PurchasingOrder
+from .models import Inventory, RequestForMaterials, RequestForQuotes, QuotationsReceived, PurchasingOrders
 
 admin.site.register(Inventory)
-admin.site.register(RequestForMaterial)
+admin.site.register(RequestForMaterials)
 admin.site.register(RequestForQuotes)
 admin.site.register(QuotationsReceived)
-admin.site.register(PurchasingOrder)
+admin.site.register(PurchasingOrders)
