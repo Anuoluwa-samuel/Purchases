@@ -1,3 +1,6 @@
+from django.views.generic import ListView
+from .models import Inventory
+
 from django.shortcuts import render, redirect
 from .forms import (
     InventoryForm, RequestForMaterialsForm,
