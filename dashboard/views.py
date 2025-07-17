@@ -1,6 +1,3 @@
-from django.views.generic import ListView
-from .models import Inventory
-
 from django.shortcuts import render, redirect
 from .forms import (
     InventoryForm, RequestForMaterialsForm,
@@ -25,19 +22,12 @@ def dashboard(request):
     })
 
 
-from django.contrib import messages
-
 def add_inventory(request):
-    if request.method == 'POST':
-        form = InventoryForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Inventory item added successfully.")
-            return redirect('add-inventory')
-    else:
-        form = InventoryForm()
+    form = InventoryForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('add-inventory')
     return render(request, 'add_inventory.html', {'form': form})
-
 
 def add_request_for_materials(request):
     form = RequestForMaterialsForm(request.POST or None)
@@ -66,7 +56,3 @@ def add_purchasing_order(request):
         form.save()
         return redirect('add-purchase-order')
     return render(request, 'add_purchasing_order.html', {'form': form})
-
-def inventory_list(request):
-    inventories = Inventory.objects.all()
-    return render(request, 'inventory_list.html', {'inventories': inventories})
