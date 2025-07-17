@@ -28,7 +28,8 @@ def add_inventory(request):
         form = InventoryForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Inventory item added successfully.")
+            add_inventory_name = form.cleaned_data.get('name')
+            messages.success(request, f"{add} item added successfully.")
             return redirect('add-inventory')
     else:
         form = InventoryForm()
