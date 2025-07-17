@@ -63,3 +63,8 @@ def add_purchasing_order(request):
         form.save()
         return redirect('add-purchase-order')
     return render(request, 'add_purchasing_order.html', {'form': form})
+
+class InventoryListView(ListView):
+    model = Inventory
+    template_name = 'dashboard/inventory_list.html'
+    context_object_name = 'inventories'
