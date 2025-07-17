@@ -1,4 +1,5 @@
 from django.urls import path
+f
 from .views import (
     add_inventory, add_request_for_materials,
     add_request_for_quotes, add_quotations_received,
