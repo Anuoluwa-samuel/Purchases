@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import InventoryForm
+from .forms import (
+    InventoryForm, RequestForMaterialsForm,
+    RequestForQuotesForm, QuotationsReceivedForm,
+    PurchasingOrdersForm
+)
+from .models import Inventory, RequestForMaterials, RequestForQuotes, QuotationsReceived, PurchasingOrders
+
 def dashboard(request):
     inventory_items = Inventory.objects.all()
     materials = RequestForMaterials.objects.all()
