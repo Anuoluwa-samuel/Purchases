@@ -5,6 +5,7 @@ from .forms import (
     PurchasingOrdersForm
 )
 
+
 def add_inventory(request):
     form = InventoryForm(request.POST or None)
     if form.is_valid():
