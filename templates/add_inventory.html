@@ -1,5 +1,16 @@
-<h2>Add Inventory Item</h2>
-<form method="post">{% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Submit</button>
-</form>
+{% extends 'base.html' %}
+
+{% block title %}Add Inventory{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">Add Inventory Item</div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
